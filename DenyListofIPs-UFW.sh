@@ -18,5 +18,7 @@ while read ip; do
     else
       # else, deny thier access to my machine
          cmd=`ufw deny from $ip`
+         echo "$ip has been added to UFW deny list"
     fi
 done <denyIPlist.txt
+# check after you run the file using the cmd: sudo ufw status
